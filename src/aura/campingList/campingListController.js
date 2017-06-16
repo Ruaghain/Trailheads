@@ -16,13 +16,8 @@
     $A.enqueueAction(action);
   },
 
-  createItem: function (component, event, helper) {
-    var campingItem = component.get('v.newItem');
-    if (!(campingItem.Name === '' || campingItem.Quantity__c === '' || campingItem.Price__c === '')) {
-      return false;
-    } else {
-      helper.createItem(component, campingItem);
-      return true;
-    }
+  handleAddItem: function(component, event, helper) {
+    var item = event.getParam('item');
+    return helper.createItem(component, item);
   }
 });

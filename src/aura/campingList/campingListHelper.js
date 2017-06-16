@@ -1,6 +1,3 @@
-/**
- * Created by rowan.massey on 19/05/2017.
- */
 ({
   createItem: function (component, campingItem) {
     var action = component.get('c.saveItem');

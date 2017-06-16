@@ -1,0 +1,22 @@
+<aura:component description="campingListForm">
+  <aura:registerEvent name="addItem" type="c:addItemEvent"/>
+
+  <aura:attribute name="newItem" type="Camping_Item__c"
+      default="{ 'sobjectType': 'Camping_Item__c', 'Name': '', 'Quantity__c': '0', 'Price__c': '0' }"/>
+
+  <form class="slds-form--stacked" onsubmit="c.submitForm">
+    <div class="slds-form-element__control">
+      <ui:inputText aura:id="name" value="{!v.newItem.Name}"/>
+    </div>
+    <div class="slds-form-element__control">
+      <ui:inputNumber aura:id="quantity" value="{!v.newItem.Quantity__c}"/>
+    </div>
+    <div class="slds-form-element__control">
+      <ui:inputCurrency aura:id="price" value="{!v.newItem.Price__c}"/>
+    </div>
+    <div class="slds-form-element__control">
+      <ui:inputCheckbox aura:id="packed" value="{!v.newItem.Packed__c}"/>
+    </div>
+    <ui:button label="Submit" buttonType="submit"/>
+  </form>
+</aura:component>
